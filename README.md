@@ -1,46 +1,87 @@
-# Astro Starter Kit: Basics
+# RYTON LIMITED - Wholesale Distribution Website
 
-```sh
-npm create astro@latest -- --template basics
+A premium wholesale distributor website built with Astro and Tailwind CSS v4.
+
+## About the Project
+
+RYTON LIMITED is a UK-based wholesale distributor offering premium personal care products, beverages, household goods, confectionery, health & wellness, and baby care products to businesses across the United Kingdom.
+
+## Tech Stack
+
+- **Framework**: Astro 6.x
+- **Styling**: Tailwind CSS v4 with @tailwindcss/vite
+- **Icons**: Font Awesome 6.5
+- **Hosting**: Netlify-ready (static site generation)
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│   ├── brand/          # Brand logo SVGs
+│   ├── *.jpg           # Product images (1-24)
+│   ├── dots.svg        # Background pattern
+│   ├── favicon.ico     # Favicon
+│   ├── favicon.png     # Favicon PNG
+│   └── robots.txt      # SEO robots file
+├── src/
+│   ├── components/
+│   │   ├── BackToTop.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── ProductCard.astro
+│   ├── data/
+│   │   └── products.js  # Product catalog (24 products)
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── index.astro    # Homepage
+│   │   ├── about.astro     # About Us
+│   │   ├── contact.astro   # Contact page
+│   │   ├── privacy.astro   # Privacy Policy
+│   │   ├── products.astro  # Product catalog
+│   │   ├── services.astro  # Services page
+│   │   └── terms.astro    # Terms of Service
+│   └── styles/
+│       └── global.css     # Global styles
+├── package.json
+├── astro.config.mjs
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Pages
 
-## 🧞 Commands
+| Page | Route | Description |
+|------|-------|-------------|
+| Homepage | `/` | Hero, stats, categories, trust signals, CTA |
+| About | `/about` | Company story, values, stats |
+| Services | `/services` | Core services, process steps |
+| Products | `/products` | Product catalog with filtering & search |
+| Contact | `/contact` | Contact form, office location, map |
+| Privacy Policy | `/privacy` | GDPR-compliant privacy policy |
+| Terms of Service | `/terms` | Legal terms for wholesale services |
 
-All commands are run from the root of the project, from a terminal:
+## Commands
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at localhost:4321 |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
 
-## 👀 Want to learn more?
+## Features
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Mobile-responsive design with Tailwind CSS
+- Product filtering and search functionality
+- Contact form with Netlify Forms integration
+- Animated scroll effects with IntersectionObserver
+- SEO-ready with meta tags and robots.txt
+- GDPR-compliant privacy policy
+- Multi-step service process visualization
+
+## Contact
+
+- **Email**: info@rytonlimited.com
+- **Address**: 3rd Floor Belmont Road, Uxbridge, England, UB8 1HE
