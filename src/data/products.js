@@ -132,9 +132,8 @@ export const products = [
     features: ["Aloe vera", "Gentle formula", "Individually wrapped"],
     minimumOrder: 1
   },
-  // Add these to your existing products array in src/data/products.js
 
-{
+  {
   id: 13,
   name: "Professional Hair Shampoo",
   category: "personal-care",
