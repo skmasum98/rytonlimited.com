@@ -1,94 +1,134 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    title: "Acceptance of Terms",
+    icon: "fa-handshake",
+    content: [
+      "By accessing or using the RYTON LIMITED website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms.",
+      "If you do not agree to these Terms, please do not use our services."
+    ]
+  },
+  {
+    title: "Wholesale Services",
+    icon: "fa-boxes-stacked",
+    content: [
+      "RYTON LIMITED operates as a wholesale distributor of household goods, personal care products, beverages, confectionery, health and wellness products, and baby care items.",
+      "Our services are available exclusively to registered business customers. You must be a legitimate business entity engaged in retail, distribution, or commercial resale.",
+      "We reserve the right to verify business credentials before accepting orders."
+    ]
+  },
+  {
+    title: "Orders and Pricing",
+    icon: "fa-tag",
+    content: [
+      "All product listings on our website are subject to availability and may be modified without notice.",
+      "Prices are quoted in British Pounds (GBP) and exclude VAT unless otherwise stated.",
+      "Minimum order quantities may apply depending on product category. Payment terms are as agreed between RYTON LIMITED and the customer."
+    ]
+  },
+  {
+    title: "Delivery and Logistics",
+    icon: "fa-truck-fast",
+    content: [
+      "We deliver products across the United Kingdom through our logistics network. Delivery times are estimates and may vary based on order volume, stock availability, and destination.",
+      "Orders are typically dispatched within 1-3 business days of confirmation. Delivery charges may apply based on order size and destination."
+    ]
+  },
+  {
+    title: "Product Quality and Returns",
+    icon: "fa-shield-halved",
+    content: [
+      "We are committed to supplying products that meet our quality standards. If you receive products that are damaged, defective, or do not match your order, please notify us within 48 hours of delivery.",
+      "Returns must be pre-authorized by our team. Products must be in original packaging and condition. Credit or replacement will be offered at our discretion."
+    ]
+  },
+  {
+    title: "Limitation of Liability",
+    icon: "fa-exclamation-triangle",
+    content: [
+      "To the fullest extent permitted by law, RYTON LIMITED shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or services.",
+      "Our total liability in any circumstance shall not exceed the value of the specific order in question."
+    ]
+  },
+  {
+    title: "Governing Law",
+    icon: "fa-gavel",
+    content: [
+      "These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales."
+    ]
+  }
+];
 ---
 
 <Layout title="Terms of Service | RYTON LIMITED">
-  <div class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
-    <header class="mb-12 text-center">
-      <h1 class="text-4xl font-extrabold text-slate-900 sm:text-5xl">Terms of Service</h1>
-      <p class="mt-2 text-sm text-slate-500">Last Updated: April 28, 2026</p>
-    </header>
 
-    <div class="prose mx-auto max-w-4xl text-slate-700">
-      <p class="lead">
-        Welcome to RYTON LIMITED. These Terms of Service ("Terms") govern your use of our website and wholesale services. By accessing our website or placing an order, you agree to be bound by these Terms.
-      </p>
-
-      <h2 class="text-2xl font-bold mt-8">1. Acceptance of Terms</h2>
-      <p>
-        By accessing or using the RYTON LIMITED website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
-      </p>
-
-      <h2 class="text-2xl font-bold mt-8">2. Wholesale Services</h2>
-      <p>
-        RYTON LIMITED operates as a wholesale distributor of household goods, personal care products, beverages, confectionery, health and wellness products, and baby care items. Our services are available exclusively to registered business customers.
-      </p>
-      <h3 class="text-xl font-bold mt-4">2.1 Eligibility</h3>
-      <p>
-        To place orders with us, you must be a legitimate business entity engaged in retail, distribution, or commercial resale. We reserve the right to verify business credentials before accepting orders.
-      </p>
-      <h3 class="text-xl font-bold mt-4">2.2 Account Registration</h3>
-      <p>
-        Each account is specific to the registered business and may not be transferred or shared with third parties. You are responsible for maintaining the confidentiality of your account information.
-      </p>
-
-      <h2 class="text-2xl font-bold mt-8">3. Orders and Pricing</h2>
-      <p>
-        All product listings on our website are subject to availability and may be modified without notice. Prices are quoted in British Pounds (GBP) and exclude VAT unless otherwise stated.
-      </p>
-      <ul class="list-disc pl-6 space-y-2 mt-2">
-        <li>Minimum order quantities may apply depending on product category.</li>
-        <li>We reserve the right to reject or cancel any order at our discretion.</li>
-        <li>Payment terms are as agreed between RYTON LIMITED and the customer.</li>
-        <li>All prices are subject to change due to supplier costs or market conditions.</li>
-      </ul>
-
-      <h2 class="text-2xl font-bold mt-8">4. Delivery and Logistics</h2>
-      <p>
-        We deliver products across the United Kingdom through our logistics network. Delivery times are estimates and may vary based on order volume, stock availability, and destination.
-      </p>
-      <ul class="list-disc pl-6 space-y-2 mt-2">
-        <li>Orders are typically dispatched within 1-3 business days of confirmation.</li>
-        <li>Delivery charges may apply based on order size and destination.</li>
-        <li>Risk in goods passes to the buyer upon delivery.</li>
-      </ul>
-
-      <h2 class="text-2xl font-bold mt-8">5. Product Quality and Returns</h2>
-      <p>
-        We are committed to supplying products that meet our quality standards. If you receive products that are damaged, defective, or do not match your order, please notify us within 48 hours of delivery.
-      </p>
-      <ul class="list-disc pl-6 space-y-2 mt-2">
-        <li>Returns must be pre-authorized by our team.</li>
-        <li>Products must be in original packaging and condition.</li>
-        <li>Credit or replacement will be offered at our discretion.</li>
-      </ul>
-
-      <h2 class="text-2xl font-bold mt-8">6. Limitation of Liability</h2>
-      <p>
-        To the fullest extent permitted by law, RYTON LIMITED shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or services.
-      </p>
-      <p class="mt-2">
-        Our total liability in any circumstance shall not exceed the value of the specific order in question.
-      </p>
-
-      <h2 class="text-2xl font-bold mt-8">7. Intellectual Property</h2>
-      <p>
-        All content on our website, including text, images, logos, and design, is the property of RYTON LIMITED and may not be reproduced without prior written consent.
-      </p>
-
-      <h2 class="text-2xl font-bold mt-8">8. Governing Law</h2>
-      <p>
-        These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.
-      </p>
-
-      <h2 class="text-2xl font-bold mt-8">9. Contact Us</h2>
-      <p>
-        For questions regarding these Terms of Service, please contact us at:
-      </p>
-      <ul class="list-disc pl-6 space-y-2 mt-2">
-        <li>Email: <a href="mailto:info@rytonlimited.com">info@rytonlimited.com</a></li>
-        <li>Phone: <a href="tel:+441234567890">+44 123 456 7890</a></li>
-      </ul>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[150px]"></div>
     </div>
-  </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">Legal</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          Terms of
+          <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Service</span>
+        </h1>
+        <p class="text-xl text-blue-200 leading-relaxed max-w-2xl mx-auto">
+          Welcome to RYTON LIMITED. These Terms of Service govern your use of our website and wholesale services.
+        </p>
+        <p class="mt-4 text-sm text-blue-300">Last Updated: April 28, 2026</p>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg class="w-full h-16 text-white" viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,40 C480,80 960,0 1440,40 L1440,60 L0,60 Z" class="fill-current"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        {sections.map((section, index) => (
+          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-8 hover:shadow-xl hover:border-blue-200 transition-all duration-300">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shrink-0">
+                <i class={`fas ${section.icon} text-xl text-white`}></i>
+              </div>
+              <div class="flex-1">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">{section.title}</h2>
+                {section.content.map((paragraph) => (
+                  <p class="text-gray-600 leading-relaxed mb-3">{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+
+        <!-- Contact Card -->
+        <div class="bg-gradient-to-br from-blue-800 to-blue-900 rounded-2xl p-8 text-white text-center">
+          <h2 class="text-2xl font-bold mb-4">Questions About Our Terms?</h2>
+          <p class="text-blue-200 mb-6">For questions regarding these Terms of Service, please contact us.</p>
+          <a href="/contact" class="inline-flex items-center gap-2 bg-white text-blue-800 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300">
+            <i class="fas fa-envelope"></i>
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

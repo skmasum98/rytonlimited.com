@@ -3,174 +3,158 @@ import Layout from '../layouts/Layout.astro';
 
 const coreServices = [
   {
-    icon: "📦",
+    icon: "fa-boxes-stacked",
     title: "Wholesale Product Supply",
-    description: "Our primary service is providing reliable, bulk access to a curated catalog of high-quality household goods, personal care items, beverages, and more."
+    description: "Our primary service is providing reliable, bulk access to a curated catalog of high-quality household goods, personal care items, beverages, and more.",
+    color: "from-blue-500 to-blue-600"
   },
   {
-    icon: "👨‍💼",
+    icon: "fa-user-tie",
     title: "Dedicated Account Management",
-    description: "Each client is paired with a dedicated account manager to provide personalized support, product recommendations, and ensure a seamless ordering experience."
+    description: "Each client is paired with a dedicated account manager to provide personalized support, product recommendations, and ensure a seamless ordering experience.",
+    color: "from-green-500 to-green-600"
   },
   {
-    icon: "🚚",
+    icon: "fa-truck-fast",
     title: "Nationwide Logistics & Delivery",
-    description: "We manage a robust logistics network to ensure your orders are delivered accurately and on-time, anywhere in the UK, with flexible scheduling options."
+    description: "We manage a robust logistics network to ensure your orders are delivered accurately and on-time, anywhere in the UK, with flexible scheduling options.",
+    color: "from-amber-500 to-amber-600"
   },
   {
-    icon: "📈",
+    icon: "fa-chart-line",
     title: "Custom & Bulk Ordering",
-    description: "We accommodate custom and large-volume orders with competitive, tiered pricing to maximize your profit margins and meet your inventory needs."
+    description: "We accommodate custom and large-volume orders with competitive, tiered pricing to maximize your profit margins and meet your inventory needs.",
+    color: "from-red-500 to-red-600"
   },
   {
-    icon: "🔍",
+    icon: "fa-shield-halved",
     title: "Quality Assurance",
-    description: "Every product in our catalog undergoes a rigorous selection and quality control process, ensuring you only receive goods that meet our high standards."
+    description: "Every product in our catalog undergoes a rigorous selection and quality control process, ensuring you only receive goods that meet our high standards.",
+    color: "from-emerald-500 to-emerald-600"
   },
   {
-    icon: "🤝",
+    icon: "fa-handshake",
     title: "Retailer Support & Partnership",
-    description: "We see ourselves as partners in your success, offering market insights and support to help you grow your business and satisfy your customers."
+    description: "We see ourselves as partners in your success, offering market insights and support to help you grow your business and satisfy your customers.",
+    color: "from-pink-500 to-pink-600"
   }
 ];
 
 const processSteps = [
-  { step: "01", title: "Consultation & Account Setup", description: "We start by understanding your business needs and setting you up with a wholesale account." },
-  { step: "02", title: "Placing Your Order", description: "Order easily through your account manager via phone or email with your specific SKUs and quantities." },
-  { step: "03", title: "Confirmation & Processing", description: "We confirm your order and our warehouse team efficiently picks and packs your items for shipment." },
-  { step: "04", title: "Delivery & Follow-Up", description: "Your order is dispatched and delivered on schedule. We follow up to ensure your complete satisfaction." }
+  { num: "01", title: "Consultation & Account Setup", desc: "We start by understanding your business needs and setting you up with a wholesale account." },
+  { num: "02", title: "Placing Your Order", desc: "Order easily through your account manager via phone or email with your specific SKUs and quantities." },
+  { num: "03", title: "Confirmation & Processing", desc: "We confirm your order and our warehouse team efficiently picks and packs your items for shipment." },
+  { num: "04", title: "Delivery & Follow-Up", desc: "Your order is dispatched and delivered on schedule. We follow up to ensure your complete satisfaction." }
 ];
 ---
 
 <Layout title="Our Services | RYTON LIMITED">
-  <!-- 1. Hero Section -->
-  <section class="relative overflow-hidden bg-linear-to-br from-blue-50 to-white py-24 text-center sm:py-32">
-    <div class="container mx-auto max-w-4xl px-4 relative z-10">
-      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl animate-fadeIn">
-        Comprehensive Wholesale Solutions
-      </h1>
-      <p class="mt-6 text-lg text-slate-600 leading-relaxed animate-fadeIn delay-200">
-        Beyond our premium products, we provide end-to-end services designed to streamline your supply chain and support your business growth.
-      </p>
-    </div>
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall.png')] opacity-20"></div>
-  </section>
 
-  <!-- 2. Core Services Section -->
-  <section class="bg-white py-24 sm:py-32">
-    <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-          What We Offer
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Our services are tailored to meet the demands of modern retailers and businesses.
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[150px]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">Our Services</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          Comprehensive Wholesale
+          <span class="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Solutions</span>
+        </h1>
+        <p class="text-xl text-blue-200 leading-relaxed max-w-2xl mx-auto">
+          Beyond our premium products, we provide end-to-end services designed to streamline your supply chain and support your business growth.
         </p>
       </div>
+    </div>
 
-      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg class="w-full h-16 text-white" viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,40 C480,80 960,0 1440,40 L1440,60 L0,60 Z" class="fill-current"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">What We Offer</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Our services are tailored to meet the demands of modern retailers and businesses.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {coreServices.map((service, index) => (
-          <div 
-            class="aos-item group rounded-3xl bg-slate-50/70 border border-slate-100 p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-xl hover:border-blue-200"
-            data-aos-delay={index * 100}
-          >
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-blue-100 to-blue-200 shadow-inner transition-transform duration-500 group-hover:scale-110">
-              <span class="text-3xl">{service.icon}</span>
+          <div class="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-500 hover:-translate-y-2">
+            <div class={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              <i class={`fas ${service.icon} text-2xl text-white`}></i>
             </div>
-            <h3 class="mt-6 text-xl font-semibold text-slate-900">{service.title}</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">{service.description}</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{service.description}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 3. How It Works -->
-  <section class="relative bg-slate-50 py-24 sm:py-32">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-noise.png')] opacity-10"></div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-          Our Simple Process
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          We’ve streamlined our partnership process to make working with us effortless and efficient.
-        </p>
+  <!-- How It Works -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Simple Process</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">We've streamlined our partnership process to make working with us effortless and efficient.</p>
       </div>
 
-      <div class="relative mt-20">
-        <!-- Vertical Line -->
-        <div class="absolute left-1/2 top-10 hidden h-[80%] w-0.5 -translate-x-1/2 bg-linear-to-b from-blue-300 to-slate-300 md:block"></div>
-
-        <div class="space-y-16 md:space-y-24">
-          {processSteps.map((step, index) => (
-            <div class="aos-item relative flex flex-col items-center text-center md:flex-row md:text-left" data-aos-delay={index * 150}>
-              <div class="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white shadow-lg ring-4 ring-white">
-                {step.step}
-              </div>
-              <div class={`mt-6 md:mt-0 md:${index % 2 === 0 ? 'ml-10' : 'mr-10'}`}>
-                <h3 class="text-xl font-bold text-slate-900">{step.title}</h3>
-                <p class="mt-3 text-slate-600 leading-relaxed">{step.description}</p>
-              </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {processSteps.map((step, i) => (
+          <div class="relative text-center group">
+            {i < processSteps.length - 1 && (
+              <div class="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gradient-to-r from-blue-200 to-blue-200 z-0"></div>
+            )}
+            <div class="relative z-10 w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
+              {step.num}
             </div>
-          ))}
-        </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+            <p class="text-gray-600">{step.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- 4. CTA Section -->
-  <section class="relative bg-linear-to-br from-blue-800 to-blue-900 text-white">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-noise.png')] opacity-20"></div>
-    <div class="relative container mx-auto px-4 py-24 text-center sm:py-32">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-        Ready to Partner With Us?
-      </h2>
-      <p class="mx-auto mt-5 max-w-2xl text-lg text-blue-100 leading-relaxed">
-        Let’s discuss how our services can help you achieve your business goals. Get in touch with our expert team today.
+  <!-- CTA Section -->
+  <section class="relative bg-gradient-to-br from-blue-800 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[150px]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Partner With Us?</h2>
+      <p class="text-xl text-blue-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Let's discuss how our services can help you achieve your business goals. Get in touch with our expert team today.
       </p>
-      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="/contact" class="inline-block w-full sm:w-auto rounded-lg bg-white px-8 py-3 font-semibold text-blue-700 shadow-lg transition-all duration-300 hover:bg-slate-100 hover:-translate-y-1">
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg">
+          <i class="fas fa-envelope"></i>
           Become a Partner
         </a>
-        <a href="/products" class="inline-block w-full sm:w-auto rounded-lg border-2 border-white/70 px-8 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+        <a href="/products" class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5">
+          <i class="fas fa-box"></i>
           Explore Products
         </a>
       </div>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(1rem); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
-  .delay-200 { animation-delay: 0.2s; }
-
-  .aos-item {
-    opacity: 0;
-    transform: translateY(2rem);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  .aos-item.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  html {
+    scroll-behavior: smooth;
   }
 </style>
-
-<script>
-  if (typeof window !== 'undefined') {
-    const elements = document.querySelectorAll('.aos-item');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    elements.forEach(el => observer.observe(el));
-  }
-</script>

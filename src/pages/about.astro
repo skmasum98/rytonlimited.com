@@ -2,143 +2,172 @@
 import Layout from '../layouts/Layout.astro';
 
 const values = [
-  { icon: "⭐", title: "Uncompromising Quality", description: "We source and supply only products that we would be proud to use in our own homes, ensuring excellence in every item." },
-  { icon: "🤝", title: "True Partnership", description: "We believe in collaborative success. Your growth is our growth, and we are dedicated to providing the support you need." },
-  { icon: "🚚", title: "Dependable Service", description: "From streamlined ordering to reliable, on-time delivery, we are committed to making your experience seamless and efficient." },
-  { icon: "💡", title: "Continuous Improvement", description: "We constantly adapt to market trends and listen to client feedback to ensure our product range is always relevant and competitive." },
+  { icon: "fa-star", title: "Uncompromising Quality", description: "We source and supply only products that we would be proud to use in our own homes, ensuring excellence in every item." },
+  { icon: "fa-handshake", title: "True Partnership", description: "We believe in collaborative success. Your growth is our growth, and we are dedicated to providing the support you need." },
+  { icon: "fa-truck-fast", title: "Dependable Service", description: "From streamlined ordering to reliable, on-time delivery, we are committed to making your experience seamless and efficient." },
+  { icon: "fa-lightbulb", title: "Continuous Improvement", description: "We constantly adapt to market trends and listen to client feedback to ensure our product range is always relevant and competitive." },
+];
+
+const stats = [
+  { value: "500+", label: "Active Partners" },
+  { value: "1000+", label: "Products" },
+  { value: "15+", label: "Years Experience" },
+  { value: "98%", label: "Satisfaction" },
 ];
 ---
 
 <Layout title="About Us | RYTON LIMITED">
-  <!-- 1. Hero Section -->
-  <section class="relative overflow-hidden bg-linear-to-b from-blue-50 to-white py-24 text-center sm:py-32">
-    <div class="container mx-auto max-w-5xl px-4 relative z-10">
-      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl animate-fadeIn">
-        Building the Future of Wholesale, Together.
-      </h1>
-      <p class="mt-6 text-lg text-slate-600 leading-relaxed animate-fadeIn delay-200">
-        RYTON LIMITED is more than a supplier; we are your strategic partner in growth, committed to providing exceptional products and unparalleled service.
-      </p>
-    </div>
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall.png')] opacity-20"></div>
-  </section>
 
-  <!-- 2. Our Story Section -->
-  <section class="bg-white py-24 sm:py-32">
-    <div class="container mx-auto grid grid-cols-1 items-center gap-14 px-4 lg:grid-cols-2">
-      <div class="aos-item">
-        <div class="relative">
-          <img 
-            src="/15.jpg" 
-            alt="RYTON LIMITED warehouse operations" 
-            class="rounded-3xl shadow-2xl border border-slate-100"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20"></div>
-        </div>
-      </div>
-      <div class="aos-item" data-aos-delay="100">
-        <span class="inline-block rounded-full bg-blue-100/70 px-4 py-1.5 text-sm font-semibold text-blue-700">
-          Our Story
-        </span>
-        <h2 class="mt-5 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-          From a Simple Idea to a Trusted Partner
-        </h2>
-        <p class="mt-6 text-slate-600 leading-relaxed">
-          Founded on the principle of bridging the gap between quality manufacturers and discerning retailers, RYTON LIMITED started with a simple mission: to make high-quality household goods accessible to businesses of all sizes.
-        </p>
-        <p class="mt-4 text-slate-600 leading-relaxed">
-          Today, we have grown into a leading wholesale provider in the UK, but our core values remain unchanged. Our success is built on the strong, lasting relationships we forge with our clients.
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[150px]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">About Us</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          Building the Future of
+          <span class="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Wholesale, Together</span>
+        </h1>
+        <p class="text-xl text-blue-200 leading-relaxed max-w-2xl mx-auto">
+          RYTON LIMITED is more than a supplier; we are your strategic partner in growth, committed to providing exceptional products and unparalleled service.
         </p>
       </div>
     </div>
+
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg class="w-full h-16 text-white" viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,40 C480,80 960,0 1440,40 L1440,60 L0,60 Z" class="fill-current"/>
+      </svg>
+    </div>
   </section>
 
-  <!-- 3. Our Values Section -->
-  <section class="bg-slate-50 py-24 sm:py-32">
+  <!-- Stats Section -->
+  <section class="py-12 bg-white border-b border-gray-100">
     <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-          The Principles That Guide Us
-        </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Our commitment to these core values ensures we deliver excellence in every aspect of our business.
-        </p>
-      </div>
-
-      <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {values.map((value, index) => (
-          <div 
-            class="aos-item group rounded-3xl bg-white p-8 text-center shadow-md border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-blue-200"
-            data-aos-delay={index * 100}
-          >
-            <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-blue-100 to-blue-200 shadow-inner transition-all duration-500 group-hover:scale-110">
-              <span class="text-3xl">{value.icon}</span>
-            </div>
-            <h3 class="mt-6 text-xl font-semibold text-slate-900">{value.title}</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">{value.description}</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-black text-blue-800 mb-1">{stat.value}</div>
+            <div class="text-gray-600 font-medium">{stat.label}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
-  
-  <!-- 4. CTA Section -->
-  <section class="relative bg-linear-to-br from-blue-800 to-blue-900 text-white">
-    <div class="absolute inset-0 bg-[url('/16.jpg')] opacity-20 bg-cover"></div>
-    <div class="relative container mx-auto px-4 py-24 text-center sm:py-32">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-        Let's Work Together
-      </h2>
-      <p class="mx-auto mt-5 max-w-2xl text-lg text-blue-100 leading-relaxed">
+
+  <!-- Our Story Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-3xl blur-2xl opacity-50"></div>
+          <div class="relative">
+            <img 
+              src="/15.jpg" 
+              alt="RYTON LIMITED warehouse operations" 
+              class="rounded-2xl shadow-2xl w-full"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-4 border border-gray-100">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                  <i class="fas fa-award text-white text-xl"></i>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">15+ Years</div>
+                  <div class="text-sm text-gray-500">Industry Experience</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Our Story</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            From a Simple Idea to a Trusted Partner
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-4">
+            Founded on the principle of bridging the gap between quality manufacturers and discerning retailers, RYTON LIMITED started with a simple mission: to make high-quality household goods accessible to businesses of all sizes.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Today, we have grown into a leading wholesale provider in the UK, but our core values remain unchanged. Our success is built on the strong, lasting relationships we forge with our clients.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-2 text-gray-700">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span>UK-Based Company</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-700">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span>Nationwide Delivery</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-700">
+              <i class="fas fa-check-circle text-green-500"></i>
+              <span>Quality Assured</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Our Values</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">The Principles That Guide Us</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Our commitment to these core values ensures we deliver excellence in every aspect of our business.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {values.map((value, index) => (
+          <div class="group bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl hover:border-blue-200 transition-all duration-500 hover:-translate-y-2 text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
+              <i class={`fas ${value.icon} text-2xl text-white`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="relative bg-gradient-to-br from-blue-800 via-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[150px]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
+      <p class="text-xl text-blue-200 mb-10 max-w-2xl mx-auto leading-relaxed">
         Discover how our products and services can benefit your business. Explore our catalog or get in touch with our team today.
       </p>
-      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="/products" class="inline-block w-full sm:w-auto rounded-lg bg-green-600 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-green-700 hover:-translate-y-1">
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="/products" class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg">
+          <i class="fas fa-box"></i>
           View Our Products
         </a>
-        <a href="/contact" class="inline-block w-full sm:w-auto rounded-lg bg-white px-8 py-3 font-semibold text-blue-700 shadow-lg transition-all duration-300 hover:bg-slate-100 hover:-translate-y-1">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-800 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:-translate-y-0.5 shadow-lg">
+          <i class="fas fa-envelope"></i>
           Contact Our Team
         </a>
       </div>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  /* Fade-in animation for hero */
-  @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(1rem); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 1s ease-out forwards;
-  }
-  .delay-200 { animation-delay: 0.2s; }
-
-  /* Scroll-based reveal (AOS imitation) */
-  .aos-item {
-    opacity: 0;
-    transform: translateY(2rem);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  .aos-item.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  html {
+    scroll-behavior: smooth;
   }
 </style>
-
-<script>
-  if (typeof window !== 'undefined') {
-    const elements = document.querySelectorAll('.aos-item');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    elements.forEach(el => observer.observe(el));
-  }
-</script>
