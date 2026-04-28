@@ -83,5 +83,5 @@ RYTON LIMITED is a UK-based wholesale distributor offering premium personal care
 
 ## Contact
 
-- **Email**: info@rytonlimited.com
-- **Address**: 3rd Floor Belmont Road, Uxbridge, England, UB8 1HE
+- **Email**: info@thewebpal.com
+- **Address**: 386/4 Bhuyan Estate, Jhawchor, Hazaribagh, Dhaka
