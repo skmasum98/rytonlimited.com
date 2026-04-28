@@ -1,0 +1,269 @@
+---
+// File: src/pages/products.astro
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { products, categories } from '../data/products.js';
+---
+
+<Layout title="Our Products | RYTON LIMITED" description="Explore our premium range of wholesale products including personal care, beverages, household goods, and more. Quality products at competitive prices.">
+
+  <!-- Products Hero Section -->
+  <section class="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-600 text-white py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Premium Products</h1>
+        <p class="text-xl opacity-90 mb-8">Discover our extensive range of quality wholesale products for your business</p>
+        
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <button class="category-filter bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 active" data-category="all">
+            All Products
+          </button>
+          {Object.entries(categories).map(([key, category]) => (
+            <button 
+              class="category-filter bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300" 
+              data-category={key}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <!-- Search and Sort Bar -->
+      <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
+        <div class="w-full md:w-auto">
+          <div class="relative max-w-md">
+            <input 
+              type="text" 
+              id="product-search" 
+              placeholder="Search products..." 
+              class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            >
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <select id="sort-products" class="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300">
+            <option value="name">Sort by Name</option>
+            <option value="category">Sort by Category</option>
+          </select>
+          
+          <div class="flex items-center gap-2">
+            <button id="grid-view" class="p-2 rounded-lg border border-gray-300 hover:bg-blue-50 transition-colors duration-300 active">
+              <i class="fas fa-th-large text-gray-600"></i>
+            </button>
+            <button id="list-view" class="p-2 rounded-lg border border-gray-300 hover:bg-blue-50 transition-colors duration-300">
+              <i class="fas fa-list text-gray-600"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {products.map((product) => (
+          <ProductCard product={product} categories={categories} view="grid" />
+        ))}
+      </div>
+
+      <!-- No Results Message -->
+      <div id="no-results" class="hidden text-center py-12">
+        <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+        <h3 class="text-2xl font-bold text-gray-600 mb-2">No products found</h3>
+        <p class="text-gray-500">Try adjusting your search or filter criteria</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bulk Order CTA -->
+  <section class="py-16 bg-blue-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Need Bulk Quantities?</h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Get special pricing for large orders and custom packaging options.</p>
+      <a href="/contact" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 inline-flex items-center">
+        Request Bulk Quote <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .category-filter.active {
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* List view styles */
+  .list-view #products-container {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+
+  .list-view .product-card {
+    display: flex;
+    max-width: none;
+  }
+
+  /* Animation for filtered products */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Type-safe element selection with null checks
+    const categoryFilters = document.querySelectorAll<HTMLButtonElement>('.category-filter');
+    const productCards = document.querySelectorAll<HTMLElement>('.product-card');
+    const searchInput = document.getElementById('product-search') as HTMLInputElement | null;
+    const gridViewBtn = document.getElementById('grid-view') as HTMLButtonElement | null;
+    const listViewBtn = document.getElementById('list-view') as HTMLButtonElement | null;
+    const productsContainer = document.getElementById('products-container') as HTMLElement | null;
+    const noResults = document.getElementById('no-results') as HTMLElement | null;
+
+    // Category Filter
+    categoryFilters.forEach((filter: HTMLButtonElement) => {
+      filter.addEventListener('click', function(this: HTMLButtonElement) {
+        // Remove active class from all filters
+        categoryFilters.forEach((f: HTMLButtonElement) => f.classList.remove('active'));
+        // Add active class to clicked filter
+        this.classList.add('active');
+        
+        const category = this.getAttribute('data-category');
+        if (!category) return;
+        
+        // Filter products
+        productCards.forEach((card: HTMLElement) => {
+          const cardCategory = card.getAttribute('data-category');
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = 'block';
+            setTimeout(() => card.classList.add('fade-in'), 10);
+          } else {
+            card.style.display = 'none';
+            card.classList.remove('fade-in');
+          }
+        });
+        
+        checkNoResults();
+      });
+    });
+
+    // Search Functionality
+    if (searchInput) {
+      searchInput.addEventListener('input', function(this: HTMLInputElement) {
+        const searchTerm = this.value.toLowerCase();
+        
+        productCards.forEach((card: HTMLElement) => {
+          const productName = card.getAttribute('data-name');
+          if (!productName) return;
+          
+          const isVisible = productName.includes(searchTerm);
+          
+          card.style.display = isVisible ? 'block' : 'none';
+          if (isVisible) {
+            setTimeout(() => card.classList.add('fade-in'), 10);
+          } else {
+            card.classList.remove('fade-in');
+          }
+        });
+        
+        checkNoResults();
+      });
+    }
+
+    // View Toggle
+    if (gridViewBtn && listViewBtn && productsContainer) {
+      gridViewBtn.addEventListener('click', function(this: HTMLButtonElement) {
+        productsContainer.classList.remove('list-view');
+        gridViewBtn.classList.add('active');
+        listViewBtn.classList.remove('active');
+      });
+      
+      listViewBtn.addEventListener('click', function(this: HTMLButtonElement) {
+        productsContainer.classList.add('list-view');
+        listViewBtn.classList.add('active');
+        gridViewBtn.classList.remove('active');
+      });
+    }
+
+    // Sort Functionality
+    const sortSelect = document.getElementById('sort-products') as HTMLSelectElement | null;
+    if (sortSelect) {
+      sortSelect.addEventListener('change', function(this: HTMLSelectElement) {
+        const sortValue = this.value;
+        if (!productsContainer) return;
+        
+        const cards = Array.from(productCards);
+        
+        cards.sort((a: HTMLElement, b: HTMLElement) => {
+          const nameA = a.getAttribute('data-name') || '';
+          const nameB = b.getAttribute('data-name') || '';
+          const categoryA = a.getAttribute('data-category') || '';
+          const categoryB = b.getAttribute('data-category') || '';
+          
+          switch(sortValue) {
+            case 'name':
+              return nameA.localeCompare(nameB);
+            case 'category':
+              return categoryA.localeCompare(categoryB);
+            default:
+              return 0;
+          }
+        });
+        
+        // Reappend sorted cards
+        cards.forEach((card: HTMLElement) => productsContainer.appendChild(card));
+      });
+    }
+
+    // Check if no results are shown
+    function checkNoResults() {
+      if (!noResults) return;
+      
+      const visibleCards = Array.from(productCards).filter((card: HTMLElement) => 
+        card.style.display !== 'none'
+      );
+      
+      if (visibleCards.length === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    // Initialize view state
+    if (productsContainer) {
+      // Store initial grid state
+      productCards.forEach((card: HTMLElement) => {
+        card.setAttribute('data-original-html', card.innerHTML);
+      });
+    }
+  });
+</script>

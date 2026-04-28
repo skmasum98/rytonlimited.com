@@ -1,23 +1,47 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import BackToTop from '../components/BackToTop.astro'
+
+// 1. Define Props to dynamically set title and description
+export interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<!-- 2. Add scroll-smooth for better UX with anchor links -->
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+        <!-- 3. Use dynamic title from props (CRITICAL FOR SEO) -->
+        <title>{title}</title>
+        
+        <!-- 4. Add dynamic meta description for SEO -->
+        <meta name="description" content={description || 'RYTON LIMITED is a wholesale provider of premium household goods, personal care, and confectionery products in the UK.'} />
 	</head>
+	
+    <!-- 5. Remove unnecessary internal style block -->
 	<body>
-		<slot />
+		<Header />
+        <!-- Set a max width and margin for main content area -->
+        <main class="mx-auto">
+		    <slot />
+        </main>
+		<Footer />
+		<BackToTop />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const coreServices = [
+  {
+    icon: "📦",
+    title: "Wholesale Product Supply",
+    description: "Our primary service is providing reliable, bulk access to a curated catalog of high-quality household goods, personal care items, beverages, and more."
+  },
+  {
+    icon: "👨‍💼",
+    title: "Dedicated Account Management",
+    description: "Each client is paired with a dedicated account manager to provide personalized support, product recommendations, and ensure a seamless ordering experience."
+  },
+  {
+    icon: "🚚",
+    title: "Nationwide Logistics & Delivery",
+    description: "We manage a robust logistics network to ensure your orders are delivered accurately and on-time, anywhere in the UK, with flexible scheduling options."
+  },
+  {
+    icon: "📈",
+    title: "Custom & Bulk Ordering",
+    description: "We accommodate custom and large-volume orders with competitive, tiered pricing to maximize your profit margins and meet your inventory needs."
+  },
+  {
+    icon: "🔍",
+    title: "Quality Assurance",
+    description: "Every product in our catalog undergoes a rigorous selection and quality control process, ensuring you only receive goods that meet our high standards."
+  },
+  {
+    icon: "🤝",
+    title: "Retailer Support & Partnership",
+    description: "We see ourselves as partners in your success, offering market insights and support to help you grow your business and satisfy your customers."
+  }
+];
+
+const processSteps = [
+  { step: "01", title: "Consultation & Account Setup", description: "We start by understanding your business needs and setting you up with a wholesale account." },
+  { step: "02", title: "Placing Your Order", description: "Order easily through your account manager via phone or email with your specific SKUs and quantities." },
+  { step: "03", title: "Confirmation & Processing", description: "We confirm your order and our warehouse team efficiently picks and packs your items for shipment." },
+  { step: "04", title: "Delivery & Follow-Up", description: "Your order is dispatched and delivered on schedule. We follow up to ensure your complete satisfaction." }
+];
+---
+
+<Layout title="Our Services | RYTON LIMITED">
+  <!-- 1. Hero Section -->
+  <section class="relative overflow-hidden bg-linear-to-b from-blue-50 to-white py-24 text-center sm:py-32">
+    <div class="container mx-auto max-w-4xl px-4 relative z-10">
+      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl animate-fadeIn">
+        Comprehensive Wholesale Solutions
+      </h1>
+      <p class="mt-6 text-lg text-slate-600 leading-relaxed animate-fadeIn delay-200">
+        Beyond our premium products, we provide end-to-end services designed to streamline your supply chain and support your business growth.
+      </p>
+    </div>
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-wall.png')] opacity-20"></div>
+  </section>
+
+  <!-- 2. Core Services Section -->
+  <section class="bg-white py-24 sm:py-32">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          What We Offer
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Our services are tailored to meet the demands of modern retailers and businesses.
+        </p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {coreServices.map((service, index) => (
+          <div 
+            class="aos-item group rounded-3xl bg-slate-50/70 border border-slate-100 p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-xl hover:border-blue-200"
+            data-aos-delay={index * 100}
+          >
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-blue-100 to-blue-200 shadow-inner transition-transform duration-500 group-hover:scale-110">
+              <span class="text-3xl">{service.icon}</span>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold text-slate-900">{service.title}</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. How It Works -->
+  <section class="relative bg-slate-50 py-24 sm:py-32">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-noise.png')] opacity-10"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          Our Simple Process
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          We’ve streamlined our partnership process to make working with us effortless and efficient.
+        </p>
+      </div>
+
+      <div class="relative mt-20">
+        <!-- Vertical Line -->
+        <div class="absolute left-1/2 top-10 hidden h-[80%] w-0.5 -translate-x-1/2 bg-linear-to-b from-blue-300 to-slate-300 md:block"></div>
+
+        <div class="space-y-16 md:space-y-24">
+          {processSteps.map((step, index) => (
+            <div class="aos-item relative flex flex-col items-center text-center md:flex-row md:text-left" data-aos-delay={index * 150}>
+              <div class="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white shadow-lg ring-4 ring-white">
+                {step.step}
+              </div>
+              <div class={`mt-6 md:mt-0 md:${index % 2 === 0 ? 'ml-10' : 'mr-10'}`}>
+                <h3 class="text-xl font-bold text-slate-900">{step.title}</h3>
+                <p class="mt-3 text-slate-600 leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CTA Section -->
+  <section class="relative bg-linear-to-br from-blue-800 to-blue-900 text-white">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-noise.png')] opacity-20"></div>
+    <div class="relative container mx-auto px-4 py-24 text-center sm:py-32">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Ready to Partner With Us?
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg text-blue-100 leading-relaxed">
+        Let’s discuss how our services can help you achieve your business goals. Get in touch with our expert team today.
+      </p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/contact" class="inline-block w-full sm:w-auto rounded-lg bg-white px-8 py-3 font-semibold text-blue-700 shadow-lg transition-all duration-300 hover:bg-slate-100 hover:-translate-y-1">
+          Become a Partner
+        </a>
+        <a href="/products" class="inline-block w-full sm:w-auto rounded-lg border-2 border-white/70 px-8 py-3 font-semibold text-white shadow-md transition-all duration-300 hover:bg-white/10 hover:-translate-y-1">
+          Explore Products
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(1rem); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+  .delay-200 { animation-delay: 0.2s; }
+
+  .aos-item {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .aos-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  if (typeof window !== 'undefined') {
+    const elements = document.querySelectorAll('.aos-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => observer.observe(el));
+  }
+</script>
