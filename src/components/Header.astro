@@ -21,7 +21,7 @@ const navLinks = [
       <!-- Desktop Nav -->
       <nav role="navigation" aria-label="Main navigation" class="hidden md:flex space-x-8">
         {navLinks.map(link => (
-          <a href={link.href} class="font-medium text-gray-700 hover:text-blue-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">
+          <a href={link.href} class="font-medium text-gray-700 hover:text-blue-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300">
             {link.label}
           </a>
         ))}
